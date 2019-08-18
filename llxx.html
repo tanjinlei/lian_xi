@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // function person (name,ate){
+    //     this.name = name,
+    //     this.ate = ate
+    // }
+    // person.prototype.mmm = function(){
+    //     console.log(this.name)
+    // }
+    // person.prototype.nnn = function(){
+    //     console.log(this.ate)
+    // }
+    // function num(name,ate,bbb,vvv) {
+    //     person.call(this,name,ate)
+    //     this.bbb = bbb
+    //     this.vvv = vvv
+    // }
+    // num.prototype = new person()
+    // num.prototype.mm = function(){
+    //     console.log(this.bbb)
+    // }
+    // num.prototype.nn = function(){
+    //     console.log(this.vvv)
+    // }
+    // var tom = new num('tom',20,123,100);
+    // tom.nn()
+    // tom.mmm()
+    // (function (){var name = '123';console.log(name)})()
+
+    // 全局与局部作用域
+    // var a = 100
+    // function fn (a){
+    //     console.log(a)
+    //     var a = 200
+
+    // } 
+    // fn(a)
+    //闭包
+    // var nn = (function fn() {
+    //     var a = 20
+    //     return function fl() {
+    //         console.log(a)
+    //     }
+    // })()
+    // nn() // 就是一个函数
+//  (function (){
+//     var a = 300
+//     console.log(456);
+//   })()
+//   var nnn = fn()
+// nnn()
+ var i = 0
+  function fn(){
+    i++
+    if(i<10) {
+        i+=i
+      fn()
+    }else{
+        console.log(i);
+    }
+  }
+  fn()
+</script>

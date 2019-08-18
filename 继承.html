@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>class的继承方式</title>
+</head>
+<body>
+  <script>
+    // function Person
+    class Person{
+      constructor(name,age,gender){
+        this.name = name 
+        this.age = age 
+        this.gender = gender
+      }
+      sayHi(){
+        console.log('大家好,我叫'+this.name+',今年'+this.age+'岁了');
+      }
+    }
+
+    class Stu extends Person{
+      constructor(name,age,gender,score){
+        super(name,age,gender);// 如果有属性的继承的话,一定要在constructor的第一行写super
+        this.score = score  // 自身所拥有的,原来怎么写还是怎么写
+      }
+      play(){
+        console.log('现在开始玩游戏了...');
+      }
+    }
+
+    // var stu1 = new Stu('tom',16,'男',100)
+    // stu1.play()
+    // stu1.sayHi()
+
+    class Driver extends Person{  // extends 此处表示继承
+      constructor(name,age,gender,salary){ // 如果没有属性的话,constructor是可以省略的,如果有属性则必须将属性写在constructor
+        super(name,age,gender)
+        this.salary = salary
+      }
+      drive(){
+        console.log('现在开始发车了...');
+      }
+      say(){
+        console.log('大家好,我叫'+this.name+',今年'+this.age+'岁了'+this.salary);
+      }
+
+    }
+
+    var d1 = new Driver('john',29,'男',12000)
+    d1.drive()
+    d1.say()
+  </script>
+</body>
+</html>
