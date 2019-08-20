@@ -98,30 +98,50 @@
 <script>
   var form = document.getElementById('registerForm');
   var btn = document.querySelector('.btn');
-var userName = form.userName;
-var password = form.password
-var phoneNumber = form.phoneNumber
-// console.log(userName);
-// console.log(password);
-// console.log(phoneNumber);
+  var userName = form.userName;
+  var password = form.password
+  var phoneNumber = form.phoneNumber
+  // console.log(userName);
+  // console.log(password);
+  // console.log(phoneNumber);
 
-// 封装函数
+  // 封装函数
 
-// var namekong = function(){
-//   if(!userName.value){
-//       return '用户名不能为空'
-//     }
-// }
-// var namechang = function(){
-//   if(userName.value.length<8){
-//       return '长度不够'
-//     }
-// }
+  // var namekong = function(){
+  //   if(!userName.value){
+  //       return '用户名不能为空'
+  //     }
+  // }
+  // var namechang = function(){
+  //   if(userName.value.length<8){
+  //       return '长度不够'
+  //     }
+  // }
 
-// 封装函数2.0
-
-// ##############分界线################
-  btn.onclick = function(e){
+  // 封装函数2.0
+  var mine = function () {
+    // 触发事件：
+    var namekong = function () {
+      if (!userName.value.trim()) {
+        return '用户名不能为空'
+      }
+    }
+    var namechang = function () {
+      if (userName.value.length < 8) {
+        return '长度不够'
+      }
+    }
+    // 注册判断条件
+    var myif = [namekong, namechang]
+    for (var i = 0; i < myif.length; i++) {
+      var myi = myif[i]()
+      if(myi){
+        return myi
+      }
+    }
+  }
+  // ##############分界线################
+  btn.onclick = function (e) {
     // if(!userName.value){
     //   alert('用户名不能为空')
     //   e.preventDefault()
@@ -134,27 +154,28 @@ var phoneNumber = form.phoneNumber
     // }
 
     // 使用封装函数
-    var kong = namekong()
-    if(kong){
+    var kong = mine()
+    if (kong) {
       alert(kong)
       return false
     }
-    var chang = namechang()
-    if(chang){gg
-      alert(chang)
-      return false
-    }
+    // var chang = namechang()
+    // if (chang) {
+    //   gg
+    //   alert(chang)
+    //   return false
+    // }
 
-    if(!password.value){
-      alert('密码不能为空')
-      e.preventDefault()
-      return
-    }
-    if(password.value.length<8){
-      alert('长度不够')
-      e.preventDefault()
-      return
-    }
+    // if (!password.value) {
+    //   alert('密码不能为空')
+    //   e.preventDefault()
+    //   return
+    // }
+    // if (password.value.length < 8) {
+    //   alert('长度不够')
+    //   e.preventDefault()
+    //   return
+    // }
   }
   /*
   当我们点击提交
@@ -171,7 +192,6 @@ var phoneNumber = form.phoneNumber
         11位数字
           - 真正在将来工作的时候，是使用 正则表达式 验证
 */
-
 </script>
 
 </html>
