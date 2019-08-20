@@ -97,21 +97,37 @@
 // // for循环只是为了查找当前按钮事件的事件源。
 // // 里面的num才是改变value的值（变量）。
 // // ########################分割#################################
-求阶乘
-用递归
-var n = +prompt('biu jh')
-function gui(n) {
-  // 1*2*3....
-  // n*（n-1）
-  // 当n=1的时候，n-1=0，此等式不成立,需要立即返回1
-  if (n == 1) {
-    return 1
-  }
-  return n*gui(n-1)
-}
-var num = gui(n)
-alert(num)
+// 求阶乘
+// 用递归
+// var n = +prompt('biu jh')
+// function gui(n) {
+//   // 1*2*3....
+//   // n*（n-1）
+//   // 当n=1的时候，n-1=0，此等式不成立,需要立即返回1
+//   if (n == 1) {
+//     return 1
+//   }
+//   return n*gui(n-1)
+// }
+// var num = gui(n)
+// alert(num)
 // ######################class的继承#########################
-
-
-
+// 创建
+class Person {
+    constructor (name,age,Num) {
+        name
+        age
+        Num
+    }
+    hollow(){
+        console.log('我叫：'+name+',今年：'+age+'岁，我喜欢的数字：'+Num)
+    }
+}
+// 继承
+class my extends Person {
+    constructor(name,age,Num){
+        super(name,age,Num)
+        haha
+    }
+} 
+ 
