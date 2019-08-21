@@ -119,29 +119,42 @@
   // }
 
   // 封装函数2.0
-  var mine = function () {
-    // 触发事件：
-    var namekong = function () {
-      if (!userName.value.trim()) {
-        return '用户名不能为空'
-      }
-    }
-    var namechang = function () {
-      if (userName.value.length < 8) {
-        return '长度不够'
-      }
-    }
-    // 注册判断条件
-    var myif = [namekong, namechang]
-    for (var i = 0; i < myif.length; i++) {
-      var myi = myif[i]()
-      if(myi){
-        return myi
-      }
-    }
-  }
+  // var mine = function () {
+  // 触发事件：
+  // var namekong = function () {
+  //   if (!userName.value.trim()) {
+  //     return '用户名不能为空'
+  //   }
+  // }
+  // var namechang = function () {
+  //   if (userName.value.length < 8) {
+  //     return '长度不够'
+  //   }
+  // }
+  // // 注册判断条件
+  // var myif = [namekong, namechang]
+  // for (var i = 0; i < myif.length; i++) {
+  //   var myi = myif[i]()
+  //   if(myi){
+  //     return myi
+  //   }
+  // }
+  // }
+
+
+  //先把验证规则封装起来，这仅仅是一种工具一个规则，不管传入的数据如何，都可以执行，是一个独立的个体。
+//   var dugui = function(val,errmsg){
+//     if(val.trim() == ''){
+//       return errmsg  // 将传递过来的提示信息返回
+//     }
+//   }
+// minlength(){
+
+// }
+
+
   // ##############分界线################
-  btn.onclick = function (e) {
+  // btn.onclick = function (e) {
     // if(!userName.value){
     //   alert('用户名不能为空')
     //   e.preventDefault()
@@ -154,11 +167,11 @@
     // }
 
     // 使用封装函数
-    var kong = mine()
-    if (kong) {
-      alert(kong)
-      return false
-    }
+    // var kong = mine()
+    // if (kong) {
+    //   alert(kong)
+    //   return false
+    // }
     // var chang = namechang()
     // if (chang) {
     //   gg
@@ -176,7 +189,7 @@
     //   e.preventDefault()
     //   return
     // }
-  }
+  // }
   /*
   当我们点击提交
     验证用户名
@@ -192,6 +205,21 @@
         11位数字
           - 真正在将来工作的时候，是使用 正则表达式 验证
 */
+
+
+
+// 
+var json = {
+  "name":"你好"
+
+}
+console.log(typeof json)
+var arr = JSON.stringify(json)
+console.log(arr)
+console.log(typeof arr)
+
+var myy = JSON.parse(arr)
+console.log(myy)
 </script>
 
 </html>
